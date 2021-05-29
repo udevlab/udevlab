@@ -5,6 +5,6 @@ The User Development Lab project provides documentation and tools to help develo
 1. Download Miniforge from https://github.com/conda-forge/miniforge, install using the default options
 
 Open a Git Bash terminal and run:
-```sh
-curl www.udevlab.org/setup.sh | sh
+```html
+curl https://udevlab.org/setup.sh | sh
 ```
