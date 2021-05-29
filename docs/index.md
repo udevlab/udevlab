@@ -6,5 +6,5 @@ The User Development Lab project provides documentation and tools to help develo
 
 Open a Git Bash terminal and run:
 ```sh
-curl udevlab.org/setup.sh | sh
+curl www.udevlab.org/setup.sh | sh
 ```
