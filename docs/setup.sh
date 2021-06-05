@@ -29,8 +29,11 @@ get_setup_py
 # Activate the base miniforge environment
 ~/miniforge3/condabin/conda.bat init bash > /dev/null
 ~/miniforge3/python $SETUP_TMP_DIR/setup.py
+
 grep "alias python" ~/.bash_profile >/dev/null || echo "alias python='winpty python'" >> ~/.bash_profile
 grep "alias ptpython" ~/.bash_profile >/dev/null || echo "alias ptpython='winpty ptpython'" >> ~/.bash_profile
+
+git config --global core.autocrlf true
 
 echo "---"
 echo "Restart your GitBash session for the changes to be effective"
