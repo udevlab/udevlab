@@ -33,7 +33,7 @@ get_setup_py
 grep "alias python" ~/.bash_profile >/dev/null || echo "alias python='winpty python'" >> ~/.bash_profile
 grep "alias ptpython" ~/.bash_profile >/dev/null || echo "alias ptpython='winpty ptpython'" >> ~/.bash_profile
 
-git config --global core.autocrlf true
+git config --global core.autocrlf input
 
 echo "---"
 echo "Restart your GitBash session for the changes to be effective"
