@@ -1,4 +1,4 @@
-The User Development Lab project provides documentation and tools to help to setup an opensource based development environment for Windows, without requiring admin privilege rights.
+The User Development Lab project provides documentation and tools to help to setup an opensource based development environment for Windows, without requiring admin privileges.
 
 1. Download GitBash from https://git-scm.com/downloads, install using the default options
 1. Download VSCode from https://code.visualstudio.com/, install using the default options

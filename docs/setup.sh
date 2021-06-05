@@ -30,6 +30,7 @@ get_setup_py
 ~/miniforge3/condabin/conda.bat init bash > /dev/null
 ~/miniforge3/python $SETUP_TMP_DIR/setup.py
 
+# Set the alias to use winpty on gitbash
 grep "alias python" ~/.bash_profile >/dev/null || echo "alias python='winpty python'" >> ~/.bash_profile
 grep "alias ptpython" ~/.bash_profile >/dev/null || echo "alias ptpython='winpty ptpython'" >> ~/.bash_profile
 
