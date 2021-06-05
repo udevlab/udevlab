@@ -7,3 +7,4 @@ Uninstall
 - VScode
 rm -f ~/.bash_profile
 rm -rf $APPDATA/Code
+rm -rf ~/.vscode/extensions
