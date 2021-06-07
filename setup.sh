@@ -32,11 +32,12 @@ echo Creating the udevlab conda environment...
 ~/miniforge3/condabin/conda.bat create -y --name udevlab python=3 > /dev/null
 ~/miniforge3/python $SETUP_TMP_DIR/setup.py
 
+grep "conda activate udevlab" ~/.bash_profile >/dev/null || echo "conda activate udevlab" >> ~/.bash_profile
+
 # Set aliases to use winpty on gitbash
 grep "alias python" ~/.bash_profile >/dev/null || echo "alias python='winpty python'" >> ~/.bash_profile
 grep "alias ptpython" ~/.bash_profile >/dev/null || echo "alias ptpython='winpty ptpython'" >> ~/.bash_profile
 grep "alias http" ~/.bash_profile >/dev/null || echo "alias http='winpty http'" >> ~/.bash_profile
-grep "conda activate udevlab" ~/.bash_profile >/dev/null || echo "conda activate udevlab" >> ~/.bash_profile
 
 git config --global core.autocrlf input
 
