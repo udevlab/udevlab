@@ -37,7 +37,6 @@ grep "conda activate udevlab" ~/.bash_profile >/dev/null || echo "conda activate
 # Set aliases to use winpty on gitbash
 grep "alias python" ~/.bash_profile >/dev/null || echo "alias python='winpty python'" >> ~/.bash_profile
 grep "alias ptpython" ~/.bash_profile >/dev/null || echo "alias ptpython='winpty ptpython'" >> ~/.bash_profile
-
 grep "alias http" ~/.bash_profile >/dev/null || echo "alias http='winpty http'" >> ~/.bash_profile
 
 git config --global core.autocrlf input
