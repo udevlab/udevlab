@@ -20,7 +20,8 @@ def install_extensions():
 
 
 CUSTOM_SETTINGS = {
-    "terminal.integrated.defaultProfile.windows": "Git Bash"
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "python.terminal.activateEnvironment": False,
 }
 
 def apply_vscode_settings():

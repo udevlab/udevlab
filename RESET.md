@@ -4,7 +4,7 @@
 Uninstall
 - Miniforge
 - GitBash
-- VScode
+- VSCode
 rm -f ~/.bash_profile
 rm -rf $APPDATA/Code
 rm -rf ~/.vscode/extensions
