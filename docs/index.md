@@ -6,7 +6,7 @@ The User Development Lab project provides documentation and tools to help to set
 
 Start a Git Bash terminal window and run the following command:
 ```sh
-$ curl -sO https://udevlab.org/setup.sh && sh setup.sh
+curl -sO https://udevlab.org/setup.sh && sh setup.sh
 ```
 
 ## Features
