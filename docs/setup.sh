@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 set -eu # Fail on error and undefined variables
 
 function check_code() {
@@ -23,16 +24,21 @@ function get_setup_py() {
     curl -sf https://udevlab.org/setup.py -o $SETUP_TMP_DIR/setup.py || curl -f https://udevlab.org/setup.py
 }
 
+function create_conda_env() {
+    echo Creating the udevlab conda environment...
+    ~/miniforge3/condabin/conda.bat create -n udevlab -y python=3 httpie > /dev/null
+    grep "conda activate udevlab" ~/.bash_profile >/dev/null || echo "conda activate udevlab" >> ~/.bash_profile
+}
+
 check_requirements
 get_setup_py
 
 # Activate the base miniforge environment
 ~/miniforge3/condabin/conda.bat init bash > /dev/null
-echo Creating the udevlab conda environment...
-~/miniforge3/condabin/conda.bat create -y --name udevlab python=3 > /dev/null
+
 ~/miniforge3/python $SETUP_TMP_DIR/setup.py
 
-grep "conda activate udevlab" ~/.bash_profile >/dev/null || echo "conda activate udevlab" >> ~/.bash_profile
+create_conda_env
 
 # Set aliases to use winpty on gitbash
 grep "alias python" ~/.bash_profile >/dev/null || echo "alias python='winpty python'" >> ~/.bash_profile
