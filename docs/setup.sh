@@ -26,7 +26,9 @@ function get_setup_py() {
 
 function create_conda_env() {
     echo Creating the udevlab conda environment...
-    ~/miniforge3/condabin/conda.bat create -n udevlab -y python=3 httpie > /dev/null
+    ~/miniforge3/condabin/conda.bat create -n udevlab -y \
+    python=3 httpie ptpython ipython \
+    > /dev/null
     grep "conda activate udevlab" ~/.bash_profile >/dev/null || echo "conda activate udevlab" >> ~/.bash_profile
 }
 
@@ -43,6 +45,7 @@ create_conda_env
 # Set aliases to use winpty on gitbash
 grep "alias python" ~/.bash_profile >/dev/null || echo "alias python='winpty python'" >> ~/.bash_profile
 grep "alias ptpython" ~/.bash_profile >/dev/null || echo "alias ptpython='winpty ptpython'" >> ~/.bash_profile
+grep "alias ipython" ~/.bash_profile >/dev/null || echo "alias ipython='winpty ipython'" >> ~/.bash_profile
 grep "alias http" ~/.bash_profile >/dev/null || echo "alias http='winpty http'" >> ~/.bash_profile
 
 git config --global core.autocrlf input

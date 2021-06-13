@@ -8,3 +8,28 @@ Start a Git Bash terminal window and run the following command:
 ```sh
 $ curl -sO https://udevlab.org/setup.sh && sh setup.sh
 ```
+
+## Features
+
+- [x] VSCode preconfigured to use GitBash
+- [x] GitBash configured to be used Miniconda
+- [x] Some developer friend utilites like httpie and ptpython
+
+
+
+Using [httpie]:
+[httpie]: https://httpie.io/
+
+![](images/screen.png)
+
+Using [ptpython] console:
+
+[ptpython]: https://github.com/prompt-toolkit/ptpython
+
+![](images/ptpython.png)
+
+Using the [ipython]: console:
+
+[ipython]: https://ipython.org/
+
+![](images/ipython.png)
