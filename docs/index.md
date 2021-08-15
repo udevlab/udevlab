@@ -2,7 +2,7 @@ The User Development Lab project provides documentation and tools to help to set
 
 
 Open a Windows Command Prompt and run the following command:
-```sh
+```nbat
 curl -s https://udevlab.org/setup.ps1 | powershell -
 ```
 
