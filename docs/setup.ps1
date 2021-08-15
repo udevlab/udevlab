@@ -9,17 +9,21 @@ $output = "$tempFolderPath\python.tar.gz"
 
 (New-Object System.Net.WebClient).DownloadFile($url, $output)
 
-tar -C $tempFolderPath -xf $output 
+tar -C $tempFolderPath -xf $output
 
-if (Test-Path ".\setup.py") {
-    Write-Output "OK"
-    & $tempFolderPath\python\python setup.py
+$currentDir = Get-Location
+
+if (Test-Path "setup\__main2__.py") {
+    Write-Output "Running from local directory"
 } else {
     $url = "https://github.com/indygreg/python-build-standalone/releases/download/20210724/cpython-3.9.6-x86_64-pc-windows-msvc-shared-install_only-20210724T1424.tar.gz"
     (New-Object System.Net.WebClient).DownloadFile("https://github.com/udevlab/udevlab/archive/refs/heads/main.zip", "$tempFolderPath\main.zip")
     Expand-Archive -LiteralPath "$tempFolderPath\main.zip" -DestinationPath $tempFolderPath\main
-    & $tempFolderPath\python\python $tempFolderPath\main\udevlab-main\docs\setup.py
+    Set-Location -Path  $tempFolderPath\main\udevlab-main
 }
 
-Write-Output  $tempFolderPath
+& $tempFolderPath\python\python -m setup
 
+Set-Location -Path $currentDir
+
+Remove-Item -Recurse -Force $tempFolderPath
