@@ -1,4 +1,5 @@
-from .venv import build_env
+from .system import install_base_packages
+
 print("Running main python app")
-build_env()
+install_base_packages()
 
